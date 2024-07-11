@@ -10,19 +10,87 @@
 </head>
 <body>
     <header>
-        <nav class="navbar bg-body-tertiary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#" onclick="redirectToLogin()">
-                    <img src="https://media.licdn.com/dms/image/C4D0BAQHOBeiBlt-IHw/company-logo_200_200/0/1631016381822/akbalartekstila_logo?e=2147483647&v=beta&t=eetJCtDUZoTUYlicC2S8UfTA6MedYNctA7XecFFQDYU" alt="Akbas" width="30" height="24">
+                <a class="navbar-brand" href="#">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGuge-FnxZONN90qXHZjUOE1j5TQ2cs0xad5sdefzRganUHJvMp4N3UCH0GtZ0drNoRIM&usqp=CAU" alt="Akbas" width="30" height="24">
                 </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                İplik
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                                <a class="dropdown-item" href="#">Seçenek 1</a>
+                                <a class="dropdown-item" href="#">Seçenek 2</a>
+                                <a class="dropdown-item" href="#">Seçenek 3</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dokuma-Örme
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+                                <a class="dropdown-item" href="#">Seçenek A</a>
+                                <a class="dropdown-item" href="#">Seçenek B</a>
+                                <a class="dropdown-item" href="#">Seçenek C</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Boyahane
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+                                <a class="dropdown-item" href="#">Seçenek X</a>
+                                <a class="dropdown-item" href="#">Seçenek Y</a>
+                                <a class="dropdown-item" href="#">Seçenek Z</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink4" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Konfeksiyon
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink4">
+                                <a class="dropdown-item" href="#">Seçenek D</a>
+                                <a class="dropdown-item" href="#">Seçenek E</a>
+                                <a class="dropdown-item" href="#">Seçenek F</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink5" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Diğer
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink5">
+                                <a class="dropdown-item" href="#">Seçenek G</a>
+                                <a class="dropdown-item" href="#">Seçenek H</a>
+                                <a class="dropdown-item" href="#">Seçenek I</a>
+                            </div>
+                        </li>
+                        <!-- Profilim dropdown menüsü -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink6" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Profil
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink6">
+                                <a class="dropdown-item" href="#">Profilim Seçenek 1</a>
+                                <a class="dropdown-item" href="#">Profilim Seçenek 2</a>
+                                <a class="dropdown-item" href="#">Profilim Seçenek 3</a>
+                            </div>
+                        </li>
+                        <!-- Search Form -->
+                        <li class="nav-item">
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" type="search" placeholder="Ara..." aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ara...</button>
+                            </form>
+                        </li>
+                    </ul>
+                </div>
             </div>
-
-            <script>
-                function redirectToLogin() {
-                    window.location.href = '/Account/Login';
-                }
-            </script>
-
         </nav>
     </header>
     <div class="container">

@@ -1,8 +1,26 @@
-﻿@{
+﻿@model List<TableTest>
+@{
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Welcome to AkbasTest!</h1>
-    <p class="lead">You have successfully logged in.</p>
-</div>
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>FullName</th>
+            <th>Phone</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TableId</td>
+                <td>@item.FullName</td>
+                <td>@item.Phone </td>
+                <td>@item.Address</td>
+            </tr>
+        }
+    </tbody>
+</table>

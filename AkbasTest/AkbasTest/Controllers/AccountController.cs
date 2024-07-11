@@ -1,19 +1,19 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using AkbasTest.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace AkbasTest.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly AccountContext _context;
 
-        public AccountController()
+        public AccountController(AccountContext context)
         {
-            _context = new ApplicationDbContext();
+            _context = context;
         }
 
         [HttpGet]
@@ -28,28 +28,26 @@ namespace AkbasTest.Controllers
             if (ModelState.IsValid)
             {
                 // Şifreyi MD5 ile şifreleme
-                MD5 md5 = new MD5CryptoServiceProvider();
-                md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(Password));
-                byte[] result = md5.Hash;
-                StringBuilder strBuilder = new StringBuilder();
-                for (int i = 0; i < result.Length; i++)
+                using (MD5 md5 = MD5.Create())
                 {
-                    strBuilder.Append(result[i].ToString("x2"));
-                }
-                string hashedPassword = strBuilder.ToString();
+                    byte[] hash = md5.ComputeHash(Encoding.ASCII.GetBytes(Password));
+                    StringBuilder strBuilder = new StringBuilder();
+                    foreach (byte b in hash)
+                    {
+                        strBuilder.Append(b.ToString("x2"));
+                    }
+                    string hashedPassword = strBuilder.ToString();
 
-                // Kullanıcı doğrulama
-                var user = _context.Users.FirstOrDefault(u => u.Username == Username && u.Password == hashedPassword);
-                if (user != null)
-                {
-                    // Giriş başarılı
-                    return RedirectToAction("Index", "Home");
+                    // Kullanıcı doğrulama
+                    var user = _context.Users.FirstOrDefault(u => u.Username == Username && u.Password == hashedPassword);
+                    if (user != null)
+                    {
+                        // Giriş başarılı
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
-                else
-                {
-                    // Giriş başarısız
-                    ModelState.AddModelError("", "Invalid login attempt.");
-                }
+                // Giriş başarısız
+                ModelState.AddModelError("", "Invalid login attempt.");
             }
             return View();
         }

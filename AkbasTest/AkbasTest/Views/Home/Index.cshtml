@@ -1,7 +1,12 @@
 ﻿@model List<TableTest>
 @{
     ViewBag.Title = "Home Page";
+    string username = "Modelimizden Gelen Kullanıcı Adı"; // Kullanıcı adınızı buraya atayın
 }
+
+<div class="alert alert-info" role="alert">
+    Hoş geldin, @username!
+</div>
 
 <table class="table table-striped table-hover">
     <thead>
@@ -18,7 +23,7 @@
             <tr>
                 <td>@item.TableId</td>
                 <td>@item.FullName</td>
-                <td>@item.Phone </td>
+                <td>@item.Phone</td>
                 <td>@item.Address</td>
             </tr>
         }

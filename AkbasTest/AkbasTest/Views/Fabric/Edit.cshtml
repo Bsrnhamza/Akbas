@@ -1,0 +1,29 @@
+﻿@model AkbasTest.Models.Fabric
+
+<h1>Kumaş Düzenle: @Model.FabricName</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="FabricId" />
+
+    <div class="form-group">
+        <label>Adı:</label>
+        <input asp-for="FabricName" class="form-control" />
+        <span asp-validation-for="FabricName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Türü:</label>
+        <input asp-for="FabricType" class="form-control" />
+        <span asp-validation-for="FabricType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Renk:</label>
+        <input asp-for="Color" class="form-control" />
+        <span asp-validation-for="Color" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label>Fiyat:</label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Güncelle</button>
+</form>

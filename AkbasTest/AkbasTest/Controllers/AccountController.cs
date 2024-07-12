@@ -43,7 +43,7 @@ namespace AkbasTest.Controllers
                     if (user != null)
                     {
                         // Giriş başarılı
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Fabric");
                     }
                 }
                 // Giriş başarısız
